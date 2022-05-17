@@ -6,22 +6,10 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { TextField, Typography, Button} from '@mui/material';
 
-export default function TrigFuncForm({data, display, existingData, setGraph}) {
+
+export default function EFuncForm({data, display, existingData, setGraph}) {
   return (
     <Box sx={{ minWidth: 120 }}>
-    <Typography sx={{m:2}}>Nota importante! Ingrese los valores en grados, la conversion a radianes se hace automaticamente</Typography>
-    <FormControl sx={{minWidth: 200, m: 1}}>
-        <InputLabel id="function">funcion trigonometrica</InputLabel>
-        <Select
-        labelId="function"
-        id="function"
-        onChange={(e)=>{data({...existingData, trig: e.target.value})}}
-        label="function"
-        >
-                <MenuItem value="sin">sin(x)</MenuItem>
-                <MenuItem value="cos">cos(x)</MenuItem>
-        </Select>
-    </FormControl>
     <TextField
         type="number" sx={{m:2}}
         inputProps={{ inputMode: 'numeric', pattern:"^-?([0]{1}\.{1}[0-9]+|[1-9]{1}[0-9]*\.{1}[0-9]+|[0-9]+|0)$" }}
@@ -38,6 +26,11 @@ export default function TrigFuncForm({data, display, existingData, setGraph}) {
             inputProps={{ inputMode: 'numeric', pattern:"^-?([0]{1}\.{1}[0-9]+|[1-9]{1}[0-9]*\.{1}[0-9]+|[0-9]+|0)$" }}
             onChange={(e)=>{data({...existingData, amplitud: parseInt(e.target.value)})}}
         />      
+        <TextField id="N" label="N" variant="standard" sx={{m:2}}
+            type="number"
+            inputProps={{ inputMode: 'numeric', pattern:"^-?([0]{1}\.{1}[0-9]+|[1-9]{1}[0-9]*\.{1}[0-9]+|[0-9]+|0)$" }}
+            onChange={(e)=>{data({...existingData, n: parseInt(e.target.value)})}}
+        /> 
         <TextField id="yint" label="y-intercept" variant="standard" sx={{m:2}}
         type="number"
         inputProps={{ inputMode: 'numeric', pattern:"^-?([0]{1}\.{1}[0-9]+|[1-9]{1}[0-9]*\.{1}[0-9]+|[0-9]+|0)$" }}
@@ -66,7 +59,7 @@ export default function TrigFuncForm({data, display, existingData, setGraph}) {
           Reiniciar
         </Button>
         <br></br>
-        <center><img src="/TrigDemo.png"></img></center>
+        <center><img src="/EDemo.png"></img></center>
     </Box>
   )
 }

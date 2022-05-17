@@ -6,16 +6,18 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { TextField, Typography, Button } from '@mui/material';
 import LinearFuncForm from "./Forms/LinearFuncForm"
+import TrigFuncForm from './Forms/TrigFuncForm';
+import Process from '../Graphs/PorPartes/Process';
+import EFuncForm from "./Forms/EFuncForm"
 
 
 
-    export default function GraphingForm({graph, setGraph, data, display, existingData}) {
+    export default function GraphingForm({graph, setGraph, data, display, isdisplayed,existingData}) {
     
-        
+        console.log("display",isdisplayed)
     
       return (
         <>
-         <>
                 <Box sx={{ minWidth: 120 }}>
             <FormControl sx={{minWidth: 120, m: 1}}>
                 <InputLabel id="function">function</InputLabel>
@@ -32,9 +34,12 @@ import LinearFuncForm from "./Forms/LinearFuncForm"
                 </Select>
             </FormControl>
             </Box>
-        </>
+        <div>
             {graph === "linear" && <LinearFuncForm setGraph={setGraph} graph={graph} data={data} display={display} existingData={existingData}></LinearFuncForm>}
-            {graph === "trigonometric" && <TrigFuncForm graph={graph} data={data} display={display} existingData={existingData}></TrigFuncForm>}
+            {graph === "trigonometric" && <TrigFuncForm setGraph={setGraph} graph={graph} data={data} display={display} existingData={existingData}></TrigFuncForm>}
+            {graph === "E^x" && <EFuncForm setGraph={setGraph} graph={graph} data={data} display={display} existingData={existingData}></EFuncForm>}
+            {isdisplayed === true && <Process graph={graph} data={data} display={display} existingData={existingData}></Process>}
+        </div>
         </>
       )
     }

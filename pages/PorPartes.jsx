@@ -41,6 +41,8 @@ export default function PorPartes() {
         <IntextModule>
           <PorPartesM1></PorPartesM1>
         </IntextModule>
+
+        <Typography variant='h3'>Por sustitución</Typography>
              
     </>
   )

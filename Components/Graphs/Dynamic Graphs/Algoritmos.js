@@ -51,38 +51,38 @@ function ExpresionToMath(expresionData, fofx){
         case("trigonometric"):
             if (expresionData.trig = "sin"){
                 for(var x=expresionData.lowerBound; x <= expresionData.upperBound; x++){
-                   var y = Math.sin(x*Math.PI/180)
+                   var y = expresionData.amplitud*Math.sin(x*Math.PI/180) + expresionData.yint
                    responseArray.push({id:x, x:x, y:y})
                 }
                 return responseArray
 
             }else if (expresionData.trig = "cos"){
                 for(var x=expresionData.lowerBound; x <= expresionData.upperBound; x++){
-                    var y = Math.cos(x*Math.PI/180)
+                    var y = expresionData.amplitud*Math.cos(x*Math.PI/180) + expresionData.yint
                     responseArray.push({id:x, x:x, y:y})
                  }
                  return responseArray
             }else if (expresionData.trig = "tan"){
                 for(var x=expresionData.lowerBound; x <= expresionData.upperBound; x++){
-                    var y = Math.tan(x*Math.PI/180)
+                    var y = expresionData.amplitud*Math.tan(x*Math.PI/180) + expresionData.yint
                     responseArray.push({id:x, x:x, y:y})
                  }
                  return responseArray
             }  else if (expresionData.trig = "cot"){
                 for(var x=expresionData.lowerBound; x <= expresionData.upperBound; x++){
-                    var y = 1/Math.tan(x*Math.PI/180)
+                    var y = expresionData.amplitud*1/Math.tan(x*Math.PI/180) + expresionData.yint
                     responseArray.push({id:x, x:x, y:y})
                  }
                  return responseArray
             }else if (expresionData.trig = "csc"){
                 for(var x=expresionData.lowerBound; x <= expresionData.upperBound; x++){
-                    var y = 1/Math.sin(x*Math.PI/180)
+                    var y = expresionData.amplitud*1/Math.sin(x*Math.PI/180) + expresionData.yint
                     responseArray.push({id:x, x:x, y:y})
                  }
                  return responseArray
             }else if (expresionData.trig = "sec"){
                 for(var x=expresionData.lowerBound; x <= expresionData.upperBound; x++){
-                    var y = 1/Math.cos(x*Math.PI/180)
+                    var y = expresionData.amplitud*1/Math.cos(x*Math.PI/180) + expresionData.yint
                     responseArray.push({id:x, x:x, y:y})
 
                     
@@ -90,6 +90,13 @@ function ExpresionToMath(expresionData, fofx){
                  return responseArray
             }
 
+        break;
+        case("E^x"):
+        for(var x=expresionData.lowerBound; x <= expresionData.upperBound; x++){
+            var y = expresionData.amplitud*(Math.E**(x*expresionData.n)) + expresionData.yint
+            responseArray.push({id:x, x:x, y:y})
+         }
+         return responseArray
         break;
 
 

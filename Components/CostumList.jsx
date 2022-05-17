@@ -7,6 +7,8 @@ import Link from "next/link"
 import LinkedLi from './LinkedLi';
 import FunctionsRoundedIcon from '@mui/icons-material/FunctionsRounded';
 import AssessmentIcon from '@mui/icons-material/Assessment';
+import CalculateIcon from '@mui/icons-material/Calculate';
+import AutoGraphIcon from '@mui/icons-material/AutoGraph';
 
 export default function CostumList() {
   return (
@@ -14,12 +16,14 @@ export default function CostumList() {
     <List>
     <LinkedLi href="/" icon={<HomeIcon/>} text="Inicio"></LinkedLi>
     <LinkedLi href="/Introduccion" icon={<FlagIcon></FlagIcon>} text="Introducción y Sumas de Riemann"></LinkedLi>
-    <LinkedLi href="/PorPartes" icon={<AssessmentIcon></AssessmentIcon>} text="Integración Basica y Por Sustitución"></LinkedLi>
+    <LinkedLi href="/PorPartes" icon={<AssessmentIcon></AssessmentIcon>} text="Integración Basica, Por Sustitución y Por Partes"></LinkedLi>
 
   </List>
   <Divider />
   <List>
   <LinkedLi href="/Formulario" icon={<FunctionsRoundedIcon></FunctionsRoundedIcon>} text="Formulario"></LinkedLi>
+  <LinkedLi href="/Ejercicios" icon={<CalculateIcon></CalculateIcon>} text="Listas de Ejercicios"></LinkedLi>
+  <LinkedLi href="/Graficador" icon={<AutoGraphIcon></AutoGraphIcon>} text="Graficador"></LinkedLi>
   </List>
   </>
   )
