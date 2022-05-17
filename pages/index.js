@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { Typography, Avatar, Card, CardContent, Button } from '@mui/material'
 import { borderLeft } from '@mui/system'
+import HrefButton from '../Components/Reusables/HrefButton'
 
 export default function Home() {
   return (
@@ -19,6 +20,13 @@ export default function Home() {
       En el menu lateral notaras una division. La primera parte son explicaciónes de temas vistos en clase, por mientras que la segunda parte son lo que llamamos recursos.
       En ellos encontraras un formulario de integrales, la lista de los ejercicios del semestre y la explicación de como funciona el graficador.
     </Typography>
+    <br></br>
+    <center><a target="_blank" href="https://github.com/Scripter-Automation/portafolio">
+      <br></br>
+    <Button variant="contained" color="primary">
+      Ver Codigo del proyecto
+    </Button>
+    </a></center>
     <br></br>
 
 
@@ -91,6 +99,18 @@ export default function Home() {
         </Card>
 
         </div>
+        <Card sx={{p:2}}>
+          <Typography variant="h3" align="center" >Recursos</Typography>
+          <br></br>
+          <div style={{display:"flex", justifyContent:"space-evenly", flexWrap:"wrap"}}>
+          <HrefButton href="https://github.com/">Github</HrefButton>
+          <HrefButton href="https://mui.com/">Material Ui</HrefButton>
+          <HrefButton href="https://nextjs.org/">Next.js</HrefButton>
+          <HrefButton href="https://reactjs.org/">React.js</HrefButton>
+          <HrefButton href="https://firebase.google.com/">Firebase</HrefButton>
+          <HrefButton href="https://react-chartjs-2.js.org/">React Chartjs 2</HrefButton>
+          </div>
+        </Card>
       </CardContent>
     </Card>
     

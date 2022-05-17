@@ -4,6 +4,8 @@ import Link from "next/link"
 import Button from '@mui/material/Button'
 import IntextModule from '../Components/Utils/IntextModule'
 import PorPartesM1 from '../Components/Graphs/PorPartes/PorPartesM1'
+import { ListItem, List } from '@mui/material'
+
 
 export default function PorPartes() {
   return (
@@ -41,9 +43,57 @@ export default function PorPartes() {
         <IntextModule>
           <PorPartesM1></PorPartesM1>
         </IntextModule>
-
+        <br></br>
         <Typography variant='h3'>Por sustitución</Typography>
-             
+        <Typography>
+          El metodo de sustitución para integrar es uno muy simple, el cual involucra tomar una parte de la función, derivarla y hacer los ajustes necesarios para poder cambiar el diferencial.
+          Esto se vuelve mas facil con ejemplos, asi que tome los siguientes ejemplos como instructivos para observar como funciona esto.
+        </Typography>
+        <br></br>
+        <Typography variant='h5'>Ejemplo 1</Typography>
+        <center><img src="/EjemploSustitución.png"></img></center>
+        <br></br>
+        <Typography variant='h5'>Ejemplo 2</Typography>
+        <center><img src="/EjemploSustitución2.png"></img></center>
+        <br></br>
+        <Typography variant='h3'>Por sustitución Trigonometrica</Typography>
+        <Typography>
+          La sustituciónn trigonometrica es mas complicada, ya que requiere ver las expresiones de una manera diferente. Es importante recordar
+          que un triangulo puede ser definido como a<sup>2</sup>=b<sup>2</sup>+c<sup>2</sup>. Entonces se debe estar atento a cuando esto se puede presentar
+          dentro de una integral, ya que como se pueden definir como un triangulo, tambien se pueden usar las expresiones trigonometricas para modificar la expresión
+          a una que sea mas sencilla de soluciónar. Tomemos la siguiente expreción como ejemplo.
+        </Typography>
+
+        <center><img src="/SustituciónTrig.png"></img></center>    
+        <br />
+        <Typography>
+          En este caso podemos observar que tenemos el apartado de b<sup>2</sup>+c<sup>2</sup>, ya que 9 = 3<sup>2</sup> y tenemos x<sup>2</sup> por lo tanto esto es suficiente
+          para crear un triangulo con las siguientes dimenciones. Con estas dimenciónes podemos tomar el angulo que se encuentra entre el lado de la hipotenusa y el
+          cateto adjacente por la parte inferior del triangulo. Este angulo sera referenciado como el angulo theta. Y basado en ese angulo podemos hacer las siguientes definiciones.
+        </Typography>
+        <br />
+        <center><img src="/TriangleSus.png"></img></center>
+        <center><img src="/SusTrig.png"></img></center>
+
+        <Typography variant='h3'>Por Partes</Typography>
+        <br></br>
+        <Typography variant="body1" color="initial">
+            El proceso de sustitución por partes, ocupa una ecuación muy peculiar y util, la cual requiere seguir un orden para facilitar su realización.
+            Este proceso puede ser resumido con acronimo ILATE. El primer elemento, que coincida sera derivado, por mientras que el segundo sera integrado.
+            El Acronimo ILATE representa lo siguiente:
+        </Typography>
+        <List>
+        <ListItem>I: Inversas</ListItem>
+        <ListItem>L: Logaritmica</ListItem>
+        <ListItem>A: Algebratica</ListItem>
+        <ListItem>T: Trigonometrica</ListItem>
+        <ListItem>E: Exponencial</ListItem>
+    </List>
+    <center><img src="/PorPartes.png"></img></center>
+    <Typography>
+      Con esto definido podemos ahora ver un ejemplo de como se ve la integración por partes
+    </Typography>
+    <center><img src="/PorPartes2.png"></img></center>
     </>
   )
 }

@@ -43,7 +43,36 @@ export default function Graficador() {
 
     <Typography variant="body1" color="initial">
         Para ver el codigo de los algoritmos que crea la información para el graficador haga click en el siguiente link <br></br>
-        <a style={{color:"blue"}}></a>
+        <a target="_blank" style={{color:"blue"}} href="https://github.com/Scripter-Automation/portafolio/tree/main/Components/Graphs/Dynamic%20Graphs"> https://github.com/Scripter-Automation/portafolio/tree/main/Components/Graphs/Dynamic%20Graphs</a>
+        <br></br>
+        Para ver el codigo de los algoritmos de la calculadora de integrales haga click en el siguiente link <br></br>
+        <a target="_blank" style={{color:"blue"}} href="https://github.com/Scripter-Automation/portafolio/blob/main/Components/Utils/Integrales/Algoritmos.js">https://github.com/Scripter-Automation/portafolio/blob/main/Components/Utils/Integrales/Algoritmos.js</a>
+    </Typography>
+    <br></br>
+    <Typography variant="h3">
+        Algoritmos del Graficador
+    </Typography>
+    <Typography variant="body1" color="initial">
+        El graficador esta dividido en 2 partes, 1 la grafica como tal bajo el archivo DynamicGraph.jsx y los algoritmos que crean la información para la grafica bajo el archivo
+        Algoritmos.js. Estos son diferentes tipos de archivos, el .jsx es un tipo de archivo de React, el cual se usa para renderizar la interfaz grafica utilizando logica, y el .js 
+        es unicamente javascript, con el proposito de llevar acabo los calculos correspondientes. Al abrir el archivo de la interfaz grafica notras los hooks useState y useEffect.
+        useState nos deja definir una variable, la cual al ser cambiada volvera a renderizar el contenido, por mientras que useEffect nos permite correr codigo unicamente 1 vez, cuando
+        el componente es renderizado por primera vez.<br></br><br></br>
+
+        En este caso el estado esta indefinido al inicio, y consigue su valor dentro del useState, como el contenido se renderiza despues de un cambio de estado, si no fuera por el useEffect, tendriamos
+        un loop infinito, el cual ocacionaria que cada vez que se asigne los valores de la grafica se vuelva a renderizar el componente, causando que todo el proceso se vuelva a reptetir.
+        Al usar el uesEffect solo sucede esto 1 vez. Ahora dentro de este useEffect, se puede ver que se corre el metodo setdisplayData despues de correr los metodos ExpresionSolver y HilightSolver.
+        Estos metodos fueron importados del Archivo de algoritmos, los cuales toman los valores que el usuario ingresa para asi tomar esos valores y convertirlos en una expresion matematica que pueda devolver un resultado.
+        <br></br><br></br>
+
+        Si abre ahora el archivo de algoritmos podra ver los metodos de los Solvers, como tal el ExpresionSolver solo corre el algoritmo que convierte los valores ingresados por el usuario a información para la grafica.
+        Por mientras que el HilightSolver corre el mismo metodo pero actua como filtro a travez del forEach. En el cual revisa que los valores que se van a pasar a la grafica para ser sombreados esten dentro del intervalo
+        especificado entre a y b por el usuario. Cualquier otro valor es convertido a nulo para que no sea sombreado.
+        <br></br> <br></br>
+        Ahora si observas el valor de la respuesta del solucionador de expresiones, notaras que esta definido como var responseArray = [] , esto significa que cada vez que se corre el for correspondiente a la expresión,
+        un objeto con la infomación es ingresado al areglo. El objeto tiene la siguiente estructura [id as Int, x as Int, y as Int]. Al meterlo como objetos, podmos conseguir 1 sola dato, que contiene consigomismo otros datos
+        necesarios para la grafica. Por eso cuando los valores son regresados a las variables que lo invocaron en la interfaz grafica, podemos hacer un loop con los arreglos de los objetos. Eso es lo que se ve dontro de los metodos
+        data.map y hilight.map los cuales nos regresan un arreglo con los valores x o y depende de cual le solicitemos. Estos al correr le entregan los datos a la grafica para ser graficados.
     </Typography>
     </>
   )
