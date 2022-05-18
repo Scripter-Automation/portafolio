@@ -22,8 +22,15 @@ export default function CostumList() {
   <Divider />
   <List>
   <LinkedLi href="/Formulario" icon={<FunctionsRoundedIcon></FunctionsRoundedIcon>} text="Formulario"></LinkedLi>
-  <LinkedLi href="/Ejercicios" icon={<CalculateIcon></CalculateIcon>} text="Listas de Ejercicios"></LinkedLi>
+  <LinkedLi href="/Ejercicios" icon={<CalculateIcon></CalculateIcon>} text="Listas de Ejercicios en Limpio"></LinkedLi>
   <LinkedLi href="/Graficador" icon={<AutoGraphIcon></AutoGraphIcon>} text="Graficador"></LinkedLi>
+  </List>
+  <Divider />
+  <List>
+
+  <LinkedLi href="/EjerciciosJesus" icon={<CalculateIcon></CalculateIcon>} text="Listas de Ejercicios Jesus"></LinkedLi>
+  <LinkedLi href="/EjerciciosAlonso" icon={<CalculateIcon></CalculateIcon>} text="Listas de Ejercicios Alonso"></LinkedLi>
+
   </List>
   </>
   )
