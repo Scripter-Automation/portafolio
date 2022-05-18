@@ -17,6 +17,7 @@ export default function PDFLoader({fileName}) {
         {fileName === "18.2" && <iframe src="https://drive.google.com/file/d/1qVpBoY8kNgUvK-DmmxSr6LkFC2Zb8dlc/preview" style={{width:"100%", height:"100vh"}} allow="autoplay"></iframe>}
         {fileName === "18.3" && <iframe src="https://drive.google.com/file/d/1W60QdcIjSRP6IWbJsHrlaBcd8nCkapR9/preview" style={{width:"100%", height:"100vh"}} allow="autoplay"></iframe>}
         {fileName === "Simpson" && <iframe src="https://drive.google.com/file/d/1UNBv8B0MhVLxxiKet_dYSiGUpysHK65x/preview" style={{width:"100%", height:"100vh"}} allow="autoplay"></iframe>}
+        {fileName === "Discos" && <iframe src="https://drive.google.com/file/d/1RaNG07jxOnqqUqdBz6Eqv1WYUhORcaog/preview" style={{width:"100%", height:"100vh"}} allow="autoplay"></iframe>}
         </>
     )
 }

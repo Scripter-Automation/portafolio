@@ -3,25 +3,29 @@ import styles from '../styles/Home.module.css'
 import { Typography, Avatar, Card, CardContent, Button } from '@mui/material'
 import { borderLeft } from '@mui/system'
 import HrefButton from '../Components/Reusables/HrefButton'
+import { useState } from 'react'
 
 export default function Home() {
+
+  const [reflexion, setReflexion] = useState(undefined)
+
   return (
     <main>
     <Typography variant="h1" align="center">Bienvenido al Portafolio</Typography>
 
     <Typography  style={{fontSize:"1.2rem"}}>
-      En la parte superior izquierda encontraras un menu, en el cual hacer click abrira todas el menu de navegación.
-      Estos estan puestos en orden cronologico segun lo visto en la materia de Calculo II del profesor Andres Gutierrez Ramos.
-      En cada apartado encontraras una descripción del tema, el cual deberia ser suficiente para comprender el metodo de integración.
-      Al igual que encontraras ejercicios resueltos por los autores de este protafolio. En Dado caso que se encuentre con un error 404 regrese a la pagina principal
-      o escoge una pagina del menu lateral 
+      En la parte superior izquierda encontraras un menú, en el cual hacer click abrirá el menu de navegación.
+      Estos estan puestos en orden cronológico segun lo visto en la materia de Cálculo II del profesor Andrés Gutierrez Ramos.
+      En cada apartado encontraras una descripción del tema, el cual debería ser suficiente para comprender el metodo de integración.
+      Al igual que encontraras ejercicios resueltos por los autores de este protafolio. En Dado caso que se encuentre con un error 404 regrese a la página principal
+      o escoge una página del menú lateral. 
     </Typography>
     <Typography  style={{fontSize:"1.2rem"}}>
-      En el menu lateral notaras una division. La primera parte son explicaciónes de temas vistos en clase, por mientras que la segunda parte son lo que llamamos recursos.
+      En el menú lateral notarás una división. La primera parte son explicaciones de temas vistos en clase, mientras que la segunda parte son lo que llamamos recursos.
       En ellos encontraras un formulario de integrales, la lista de los ejercicios del semestre y la explicación de como funciona el graficador.
     </Typography>
     <br></br>
-    <center><a target="_blank" href="https://github.com/Scripter-Automation/portafolio">
+    <center><a  href="https://github.com/Scripter-Automation/portafolio">
       <br></br>
     <Button variant="contained" color="primary">
       Ver Codigo del proyecto
@@ -71,12 +75,12 @@ export default function Home() {
         <Avatar sx={{width:100, height:100, alignSelf:"center"}} src="/avatar.jpeg"></Avatar>
         <Typography  sx={{ fontSize: 14, m:2 }}  gutterBottom>
             <b style={{fontSize:"20px"}}>Jesús Gómez-Braña González</b> <br></br>
-            A lo largo de este curso hemos aprendido los diferentes metodos de integración, desde simples hasta complejos. Obteniendo  una clara idea de como conseguir la antiderivada de casi cualquier ecuación.
-            Tambien fuimos introducidos a las funciones trigonometricas hiperbolicas y sus inversas. Entre los metodos de integración que aprendimos estaba el metodo por sustitución, por partes, por 
-            sustitución trigonometrica, mediante resolver el trinomio, mediante fracciónes parciales, por regla de Simpson, Series de Taylor, por limites, por discos y por arandelas. 
+            A lo largo de este curso hemos aprendido los diferentes métodos de integración, desde simples hasta complejos. Obteniendo  una clara idea de como conseguir la antiderivada de casi cualquier ecuación.
+            Tambien fuimos introducidos a las funciones trigonometricas hiperbólicas y sus inversas. Entre los métodos de integración que aprendimos estaba el metodo por sustitución, por partes, por 
+            sustitución trigonométrica, mediante resolver el trinomio, mediante fracciones parciales, por regla de Simpson, Series de Taylor, por limites, por discos y por arandelas. 
         </Typography>
         </div>
-       <center> <Button variant="contained" color="primary">
+       <center> <Button onClick={()=>{setReflexion("Jesus")}} variant="contained" color="primary">
           Ver Reflexion
         </Button>
         </center>
@@ -87,17 +91,16 @@ export default function Home() {
         <Avatar sx={{width:100, height:100, alignSelf:"center"}} src="/avatarAlonso.jpeg"></Avatar>
         <Typography  sx={{ fontSize: 14, m:2 }}  gutterBottom>
             <b style={{fontSize:"20px"}}>Alonso Rivera De Valle</b> <br></br>
-            A lo largo de este curso hemos aprendido los diferentes metodos de integración, desde simples hasta complejos. Obteniendo  una clara idea de como conseguir la antiderivada de casi cualquier ecuación.
-            Tambien fuimos introducidos a las funciones trigonometricas hiperbolicas y sus inversas. Entre los metodos de integración que aprendimos estaba el metodo por sustitución, por partes, por 
-            sustitución trigonometrica, mediante resolver el trinomio, mediante fracciónes parciales, por regla de Simpson, Series de Taylor, por limites, por discos y por arandelas. 
+            A lo largo del curso hemos visto varios métodos de integración, de tal forma que según hemos avanzado hemos visto como algunos se entrelazan y como en ciertos casos es necesario usar 2 o mas técnicas para un problema. Trabajamos de tal forma que entendimos de forma visual y práctica que es una integral y que es lo que vemos con el uso de esta.
         </Typography>
         </div>
-        <center> <Button variant="contained" color="primary">
+        <center> <Button onClick={()=>{setReflexion("Alonso")}} variant="contained" color="primary">
           Ver Reflexion
         </Button>
         </center>
         </Card>
-
+        {reflexion === "Jesus" && <iframe src="https://drive.google.com/file/d/1cOlbKsRt32X--CulB_Pd5KEVH34s2rXi/preview" style={{width:"100%", height:"100vh", marginBottom:"20px"}} allow="autoplay"></iframe> }
+        {reflexion === "Alonso" && <iframe src="https://drive.google.com/file/d/1Im6PUoubLjDDPfJdJfJ9fUExSvEUPf9M/preview" style={{width:"100%", height:"100vh", marginBottom:"20px"}} allow="autoplay"></iframe>}
         </div>
         <Card sx={{p:2}}>
           <Typography variant="h3" align="center" >Recursos</Typography>

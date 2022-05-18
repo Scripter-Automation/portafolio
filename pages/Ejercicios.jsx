@@ -34,6 +34,7 @@ export default function Ejercicios() {
                 <MenuItem value="18.2">Lista 18.2</MenuItem>
                 <MenuItem value="18.3">Lista 18.3</MenuItem>
                 <MenuItem value="Simpson">Lista Regla de Simpson 1/3</MenuItem>
+                <MenuItem value="Discos">Discos y Arandelas</MenuItem>
             </Select>
         </FormControl>
         </>

@@ -14,14 +14,14 @@ export const IntegralSolver = (fofx, data)=>{
         break;
         case("trigonometric"):
             if(data.trig === "sin"){
-                expresion = `${data.amplitud}*cos(x)+ ${data.yint}*x`
-                AntiA = data.amplitud*Math.cos(data.a) + data.yint*data.a
-                AntiB = data.amplitud*Math.cos(data.b) + data.yint*data.b
+                expresion = `-${data.amplitud}*cos(x)+ ${data.yint}*x`
+                AntiA = -data.amplitud*Math.cos(data.a) + data.yint*data.a
+                AntiB = -data.amplitud*Math.cos(data.b) + data.yint*data.b
                 return {expresion:expresion, AntiA:AntiA, AntiB,AntiB}
             }else if(data.trig === "cos"){
-                expresion = `-${data.amplitud}*sin(x)+ ${data.yint}*x`
-                AntiA = -data.amplitud*Math.sin(data.a) + data.yint*data.a
-                AntiB = -data.amplitud*Math.sin(data.b) + data.yint*data.b
+                expresion = `${data.amplitud}*sin(x)+ ${data.yint}*x`
+                AntiA = data.amplitud*Math.sin(data.a) + data.yint*data.a
+                AntiB = data.amplitud*Math.sin(data.b) + data.yint*data.b
                 return {expresion:expresion, AntiA:AntiA, AntiB,AntiB}
             }
 
